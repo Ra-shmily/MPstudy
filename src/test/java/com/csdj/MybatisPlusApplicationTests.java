@@ -78,14 +78,13 @@ class MybatisPlusApplicationTests {
         user.setName("今晚几点睡RA");
         user.setEmail("123456789");
         //模拟另一个线程插队操作
-
         User user2 = userMapper.selectById(1L);
         user.setName("今晚几点睡Re");
         user.setEmail("111111");
         userMapper.updateById(user2);
 
-        int i = userMapper.updateById(user);
-        System.out.println("I====================================="+i);
+       userMapper.updateById(user);
+
 
     }
 }
