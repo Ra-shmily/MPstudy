@@ -84,7 +84,11 @@ class MybatisPlusApplicationTests {
         userMapper.updateById(user2);
 
        userMapper.updateById(user);
-
+       //根据version
+        // - 取出记录时，获取当前 version
+        //- 更新时，带上这个 version
+        //- 执行更新时， set version = newVersion where version = oldVersion
+        //- 如果 version 不对，就更新失败
 
     }
 }
