@@ -68,7 +68,7 @@ class MybatisPlusApplicationTests {
         user.setEmail("123456789");
         //执行更新操作
         int i = userMapper.updateById(user);
-        System.out.println("I====================================="+i);
+        System.out.println("I===================="+i);
     }
     //乐观锁失败 多线程下
     @Test
@@ -83,6 +83,7 @@ class MybatisPlusApplicationTests {
         user.setEmail("111111");
         userMapper.updateById(user2);
 
+        //自旋锁来尝试多次提交
        userMapper.updateById(user);
        //根据version
         // - 取出记录时，获取当前 version
