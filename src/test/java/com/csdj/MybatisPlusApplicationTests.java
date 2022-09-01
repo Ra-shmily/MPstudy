@@ -139,11 +139,11 @@ class MybatisPlusApplicationTests {
     @Test
     void testDel(){
 
-      //  userMapper.deleteBatchIds(Arrays.asList(1,2));
-        userMapper.deleteById(4);
-       //    HashMap<String, Object> map = new HashMap<>();
-      //  map.put("name","今晚几点睡Ada");
-       // userMapper.deleteByMap(map);
+       userMapper.deleteBatchIds(Arrays.asList(1,2));
+      //  userMapper.deleteById(4);
+          HashMap<String, Object> map = new HashMap<>();
+       map.put("name","今晚几点睡Ada");
+       userMapper.deleteByMap(map);
 
     }
     @Test
